@@ -1,7 +1,9 @@
 import FishButton from "./Button/index"
+import FishPage from "./page/index"
 
 const components = [
-  FishButton
+  FishButton,
+  FishPage
 ]
 
 const install = function (Vue) {
@@ -21,5 +23,6 @@ export {
   // 导出的对象必须具备一个 install 方法
   install,
   // 组件列表
-  FishButton
+  FishButton,
+  FishPage
 }
