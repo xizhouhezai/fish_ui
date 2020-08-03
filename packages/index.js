@@ -1,9 +1,11 @@
 import FishButton from "./Button/index"
-import FishPage from "./page/index"
+import FishPage from "./Page/index"
+import FishSwitch from "./Switch/index"
 
 const components = [
   FishButton,
-  FishPage
+  FishPage,
+  FishSwitch
 ]
 
 const install = function (Vue) {
@@ -24,5 +26,6 @@ export {
   install,
   // 组件列表
   FishButton,
-  FishPage
+  FishPage,
+  FishSwitch
 }

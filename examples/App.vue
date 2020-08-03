@@ -2,6 +2,9 @@
   <div id="app">
     <p v-for="(item, index) in list" :key="index">{{item.name}}</p>
     <fish-button :text="'测试按钮'" @click="addListItem"></fish-button>
+    <fish-switch v-model="value"></fish-switch>
+    <button @click="chengTheme('bright')">浅色</button>
+    <button @click="chengTheme('dark')">深色</button>
   </div>
 </template>
 
@@ -9,23 +12,34 @@
 
 export default {
   name: 'App',
-  data: function () {
+  data () {
     return {
-      list: []
+      list: [],
+      value: false
     };
   },
   methods: {
-    addListItem: function () {
+    addListItem () {
       let oldList = JSON.parse(JSON.stringify(this.list));
       this.list.push({
         name: 'test_' + (oldList.length+1)
       });
+    },
+    chengTheme (theme) {
+      window.document.documentElement.setAttribute('data-theme', theme);
+    }
+  },
+  watch: {
+    value () {
+      console.log(this.value)
     }
   }
 }
 </script>
 
-<style>
+<style lang="stylus">
+@import './assets/styles/mixin.styl';
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
