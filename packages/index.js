@@ -1,6 +1,7 @@
 import FishButton from "./Button/index"
 import FishPage from "./Page/index"
 import FishSwitch from "./Switch/index"
+import './styles/font/iconfont.css'
 
 const components = [
   FishButton,
